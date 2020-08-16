@@ -1,7 +1,4 @@
 import java.util.Scanner;
-
-import javax.lang.model.element.Element;
-
 import java.util.Random;
 
 public class rangame {
@@ -14,7 +11,6 @@ public class rangame {
 		String message;
 		Scanner scanner = new Scanner(System.in);
 		Random random = new Random();
-
 		number = random.nextInt(100);
 
 		while (true) {
@@ -39,17 +35,24 @@ public class rangame {
 						System.out.println("성공하셨습니다!");
 						break;
 					}
+					i++;
 				} else {
 					if(message.equals("q")){
 						break;
 					}
+					else if(message.equals("help")){
+						System.out.println("숫자를 맞추세요");
+					}
+					else{
+						System.out.println("Command not found");
+					}
 				}
-				i++;
 			}
-			System.out.print("다시하시겠습니까?(y/N)");
+			System.out.print("다시하시겠습니까?(y/n) ");
 			text = scanner.next();
-			if (text.equals("n")||text.equals("N")||text.equals("\n"))
+			if (text.equals("n")||text.equals("N")||text.equals("no")||text.equals("No")||text.equals("NO")){
 				break;
+			}
 			else if (text.equals("y")||text.equals("Y")||text.equals("yes")) {
 				System.out.print("\n");
 				number = random.nextInt(100);
@@ -57,6 +60,10 @@ public class rangame {
 				downUserPick = 99;
 				i = 1;
 			}
+			else{
+				System.out.println("type yes or no");
+			}
 		}
+		scanner.close();
 	}
 }
