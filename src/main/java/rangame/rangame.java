@@ -1,10 +1,13 @@
+package rangame;
+
 import java.util.Scanner;
 import java.util.Random;
 
 public class rangame {
-	public static boolean isNumeric(String s) {  
-		return s != null && s.matches("[-+]?\\d*\\.?\\d+");  
-	} 
+	public static boolean isNumeric(String s) {
+		return s != null && s.matches("[-+]?\\d*\\.?\\d+");
+	}
+
 	public static void main(String args[]) {
 		int userPick, upUserPick = 0, downUserPick = 99, number, i = 1;
 		String text;
@@ -20,7 +23,7 @@ public class rangame {
 				System.out.print(i + " >> ");
 
 				message = scanner.next();
-				if(isNumeric(message)){
+				if (isNumeric(message)) {
 					userPick = Integer.parseInt(message);
 					if (userPick < number) {
 						System.out.println(userPick + "보다 큽니다.");
@@ -37,30 +40,26 @@ public class rangame {
 					}
 					i++;
 				} else {
-					if(message.equals("q")){
+					if (message.equals("q")) {
 						break;
-					}
-					else if(message.equals("help")){
+					} else if (message.equals("help")) {
 						System.out.println("숫자를 맞추세요");
-					}
-					else{
+					} else {
 						System.out.println("Command not found");
 					}
 				}
 			}
 			System.out.print("다시하시겠습니까?(y/n) ");
 			text = scanner.next();
-			if (text.equals("n")||text.equals("N")||text.equals("no")||text.equals("No")||text.equals("NO")){
+			if (text.equals("n") || text.equals("N") || text.equals("no") || text.equals("No") || text.equals("NO")) {
 				break;
-			}
-			else if (text.equals("y")||text.equals("Y")||text.equals("yes")) {
+			} else if (text.equals("y") || text.equals("Y") || text.equals("yes")) {
 				System.out.print("\n");
 				number = random.nextInt(100);
 				upUserPick = 0;
 				downUserPick = 99;
 				i = 1;
-			}
-			else{
+			} else {
 				System.out.println("type yes or no");
 			}
 		}
