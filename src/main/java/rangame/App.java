@@ -11,7 +11,7 @@ public class App {
         return s != null && s.matches("[-+]?\\d*\\.?\\d+");
     }
 
-    public static void main(String args[]) {
+    public static void main(String[] args) {
         int userPick, upUserPick = 0, downUserPick = 99, number, i = 1;
         String text;
         String message;
